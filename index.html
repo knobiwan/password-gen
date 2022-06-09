@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="style.css?v=1.0">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="password-generator-container">
+        <div class="password-generator-container-header">
+            <h1>Get a unique Password that you can't remember!</h1>
+        </div>
+        <div class="password-generator-container-body">
+            <div class="password-option">
+                <div class="length">
+                    <label id="lb-passwordLength" for="password-length">Password Length</label>
+                    <input id="password-length" type="range" min="8" max="128" value="8" class="slider" onInput="setPasswordLengthText(); generatePassword();" />    
+                    <p id="password-length-text">8</p>
+                </div>
+            </div>
+            <div class="password-option checkbox">
+                <input id="letters-upper" name="letters-upper" type="checkbox" onChange="generatePassword()"/>
+                <label id="lb-letters-upper" for="letters-upper">Uppercase Letters</label>
+            </div>
+            <div class="password-option checkbox">
+                <input id="letters-lower" name="letters-lower" type="checkbox" onChange="generatePassword()"/>
+                <label id="lb-letters-lower" for="letters-lower">Lowercase Letters</label>
+            </div>
+            <div class="password-option checkbox">
+                <input id="numbers" name="numbers" type="checkbox"  onChange="generatePassword()"/>
+                <label id="lb-numbers" for="numbers">Numbers</label>
+            </div>
+            <div class="password-option checkbox">
+                <input id="symbols" name="symbols" type="checkbox"  onChange="generatePassword()"/>
+                <label id="lb-symbols" for="symbols">Symbols</label>
+            </div>
+            <div id="password-result">
+            </div>
+        </div>
+        <div class="password-generator-container-footer">
+            <button id="generate-password" onClick="generatePassword()">Generate Password</button>
+            <button id="copy-to-clipboard" onClick="copyPasswordToClipboard()">Copy to Clipboard</button>
+        </div>
+  </div>
+</body>
+</html>
