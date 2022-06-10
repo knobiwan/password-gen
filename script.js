@@ -15,11 +15,12 @@ const lettersUpper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 let password = "";
 
 function generatePassword() {
+    resetPassword();
+    
     if (!lettersUpperEl.checked && !lettersLowerEl.checked && !numberEl.checked && !symbolsEl.checked) {
         return;
     }
 
-    resetPassword();
     const pattern = getPattern();
     for (let i = 0, n = pattern.length; i < passwordLengthEl.value; i++) {
         let passwordChar = pattern[Math.floor(Math.random() * n)];
