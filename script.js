@@ -68,3 +68,5 @@ function copyPasswordToClipboard() {
 function setPasswordLengthText() {
     passwordLengthTextEl.textContent = passwordLengthEl.value;
 }
+
+generatePassword();
